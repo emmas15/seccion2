@@ -1,0 +1,258 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('fondo.jpg');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin: 10px;
+    padding: 0px;
+}
+
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 10px 0; /* Espacio alrededor del nav */
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #111;
+}
+
+.menu ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+}
+
+.menu ul li a {
+    padding: 10px 15px;
+}
+
+.menu ul li a:hover {
+    background-color: #555;
+}
+
+.contenti {
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen y el contenedor de texto */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+    padding: 20px;
+    text-align: center; /* Centra el texto */
+}
+
+.contenti > img {
+    width: auto; /* Eliminamos el ajuste del ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 400px; /* Mantiene la proporción de la imagen */
+
+}
+
+.text {
+    flex-grow: 1; /* Permite que el contenedor de texto ocupe el espacio restante */
+}
+
+.text h1, .text h2 {
+    margin: 0; /* Quita el margen por defecto del título y subtítulo */
+}
+
+.text h2 {
+    margin-top: 5px; /* Espacio entre el título y el subtítulo */
+    font-size: 40px;
+}
+
+.text h1 {
+    font-size: 90px;
+}
+
+
+.card {
+    flex: 1 1 300px; /* Hace que las tarjetas sean flexibles y que su ancho mínimo sea de 300px */
+    margin: 10px;
+    border: 2px solid #ddd; /* Bordes más finos */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para un mejor estilo */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Para asegurarse de que el contenido no se desborde */
+    transition: transform 0.2s; /* Transición suave para el efecto hover */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card .contenido {
+    padding: 15px; /* Espacio interno más uniforme */
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.card .footerr {
+    background-color: #000000; /* Color de fondo más claro */
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd; /* Bordes superiores para el pie de página */
+    
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    margin: 20px;
+}
+
+.boton-hipervinculo {
+    color: #ffffff; /* Cambia el color del texto a blanco */
+}
+
+
+/* Media Queries */
+
+/* Dispositivos pequeños (teléfonos) */
+@media (max-width: 600px) {
+    nav {
+        justify-content: space-between; /* Justifica el contenido del nav para colocar el icono de menú hamburguesa a la derecha */
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        align-self: center; /* Centra el icono de menú hamburguesa */
+    }
+
+    .contenti {
+        flex-direction: column;
+    }
+
+    .text h1 {
+        font-size: 50px;
+    }
+
+    .text h2 {
+        font-size: 24px;
+    }
+
+    .card {
+        flex: 1 1 100%; /* Las tarjetas ocupan el 100% del ancho disponible en pantallas pequeñas */
+        margin: 10px 0;
+    }
+}
+
+/* Dispositivos medianos (tabletas) */
+@media (max-width: 768px) {
+    nav {
+        justify-content: space-between; /* Justifica el contenido del nav para colocar el icono de menú hamburguesa a la derecha */
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        align-self: center; /* Centra el icono de menú hamburguesa */
+    }
+
+    .contenti {
+        flex-direction: column;
+    }
+
+    .text h1 {
+        font-size: 60px;
+    }
+
+    .text h2 {
+        font-size: 28px;
+    }
+
+    .card {
+        flex: 1 1 45%; /* Las tarjetas ocupan el 45% del ancho disponible en pantallas medianas */
+    }
+}
+
+/* Dispositivos grandes (escritorios) */
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .contenti {
+        flex-direction: row;
+    }
+
+    .text h1 {
+        font-size: 90px;
+    }
+
+    .text h2 {
+        font-size: 40px;
+    }
+
+    .card {
+        flex: 1 1 30%; /* Las tarjetas ocupan el 30% del ancho disponible en pantallas grandes */
+    }
+}
